@@ -7,7 +7,7 @@ const app = require("./app");
 // database connection
 mongoose.connect(process.env.LOCAL_DATABASE, { useNewUrlParser: true }).then(() => {
     console.log(`Database connection is working properly`.red.bold);
-    console.log(`my owner wanted to see blue color`.blue.bold);
+    console.log(`my coder wanted to see blue color`.blue.bold);
 })
 
 
