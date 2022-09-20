@@ -1,20 +1,19 @@
-const express = require("express");
-const app = express();
-const cors = require("cors");
 const mongoose = require("mongoose");
-const toursRoute = require("./routes/v1/tours.route")
+const dotenv = require("dotenv").config();
+const colors = require("colors");
 
+const app = require("./app");
 
-// middlewares
-app.use(express.json());
-app.use(cors());
-
-
-//checking routes
-app.get("/", (req, res) => {
-    res.send("working properly!");
+// database connection
+mongoose.connect(process.env.LOCAL_DATABASE, { useNewUrlParser: true }).then(() => {
+    console.log(`Database connection is working properly`.red.bold);
+    console.log(`my coder wanted to see blue color`.blue.bold);
 })
 
-app.use("/api/v1/tours", toursRoute)
 
-module.exports = app;
+// server
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
+    console.log(`server is running on the port ${port}`.yellow.bold);
+})
