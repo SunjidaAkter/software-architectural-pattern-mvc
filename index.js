@@ -5,7 +5,7 @@ const colors = require("colors");
 const app = require("./app");
 
 // database connection
-mongoose.connect(process.env.LOCAL_DATABASE, { useNewUrlParser: true }).then(() => {
+mongoose.connect('mongodb+srv://dbBasicMVC:VyTQ1jQZwmqRNpCO@cluster0.ru8xnum.mongodb.net/?retryWrites=true&w=majority').then(() => {
     console.log(`Database connection is working properly`.red.bold);
     console.log(`my coder wanted to see blue color`.blue.bold);
 })
